@@ -5,7 +5,6 @@ class AppoimentController {
 
    static async Home(req, res){
       try{
-         console.log('deu certo')
          res.render('index')
       }catch(err){
          console.log(err)
@@ -79,8 +78,14 @@ class AppoimentController {
 
    static async SearchAppoiment(req, res){
       try {
-         var appos = await AppoimentService.Search(req.query.search)
-         res.render('list', {appos})
+         if(req.query.search){
+            var appos = await AppoimentService.Search(req.query.search)
+            res.render('list', {appos})
+         }else{
+            res.redirect('list')   
+         }
+         
+            
       } catch (err) {
          console.log(err)
          

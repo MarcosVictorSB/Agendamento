@@ -21,7 +21,7 @@ class AppoimentService extends IAppoimentService{
 
    async Search(query){
       try {
-         return await Appo.find().or([{email: query}, {cpf: query}])   
+         return await Appo.find().or([{email: query}, {cpf: query}, {name: query}])   
       } catch (error) {
          console.log(error)
       }      
