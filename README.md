@@ -1,2 +1,3 @@
-# agendamento
-Sistema de agendamento.
+# Sistema de Agendamento
+
+Sistema criado utilizando nodejs, mongodb, express, ejs e nodemailer
