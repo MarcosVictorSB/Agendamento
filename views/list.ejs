@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Agendamento</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">      
+</head>
+<body>
+
+   <div class="container">
+      <h3>Consultas</h3>
+      <form action="/searchresult" method="get">
+         <div class="input-group mb-3">
+            <input type="search" name="search" class="form-control" placeholder="informe o email ou cpf" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+               <button class="btn btn btn-primary">Consultar</button>
+            </div>
+          </div>
+         
+      </form>
+      <div class="row">
+         <% appos.forEach(appo => { %>
+            <div class="col-sm-4" >            
+                  <div class="card mt-4">
+                  <h5 class="card-header">Consulta: <%= appo.description  %></h5>
+                  <div class="card-body">
+                  <p class="font-weight-normal">Paciente: <%= appo.name %></p>
+                  <hr>
+                  <p class="font-weight-normal">Email: <%= appo.email %></p>
+                  <p class="font-weight-normal">CPF: <%= appo.cpf  %></p>
+                  <p class="font-weight-normal">Data: <%= appo.date  %></p>
+                  <p class="font-weight-normal">Hora: <%= appo.time  %></p>
+                  </div>         
+                  
+               </div>               
+            </div>
+         <% }); %>
+      </div>
+   </div>
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

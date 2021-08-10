@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Agendamento</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">      
+</head>
+<body>
+
+   <div class="container">
+      <div class="card mt-4">
+         <h5 class="card-header">Consulta: <%= appo.description  %></h5>
+         <div class="card-body">
+           <p class="font-weight-normal">Paciente: <%= appo.name %></p>
+           <hr>
+           <p class="font-weight-normal">Email: <%= appo.email %></p>
+           <p class="font-weight-normal">CPF: <%= appo.cpf  %></p>
+           <hr>
+           <% if(!appo.finished){ %>
+            <form action="/finish" method="post">
+               <input type="hidden" name="id" value="<%= appo._id %>">
+               <button type="submit" class="btn btn-success btn-sm">Finalizar Consulta</button>
+            </form>
+            
+            <% } %>
+         </div>         
+         
+       </div>
+   </div>
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
